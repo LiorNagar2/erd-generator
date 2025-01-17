@@ -18,8 +18,12 @@
     "mongoose",
     "mermaid"
   ],
-  "author": "LiorRagan",
-  "license": "ISC",
+  "author": "LiorNagar",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/erd-generator.git"
+  },
   "dependencies": {
     "@babel/parser": "^7.26.5",
     "@mermaid-js/mermaid-cli": "^11.4.2",

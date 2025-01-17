@@ -1,0 +1,36 @@
+{
+  "name": "erd-generator",
+  "version": "1.0.0",
+  "description": "A CLI tool to generate ER diagrams from ORM models or schemas",
+  "main": "src/index.js",
+  "bin": {
+    "erd-gen": "./src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [
+    "ERD",
+    "diagram",
+    "sequelize",
+    "mongoose",
+    "mermaid"
+  ],
+  "author": "LiorRagan",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/parser": "^7.26.5",
+    "@mermaid-js/mermaid-cli": "^11.4.2",
+    "chalk": "^5.4.1",
+    "commander": "^13.0.0",
+    "esprima": "^4.0.1",
+    "mermaid.cli": "^0.5.1",
+    "mongoose": "^8.9.5"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "sequelize": "^6.37.5"
+  }
+}

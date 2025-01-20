@@ -68,15 +68,15 @@ class DiagramGenerator {
         const mermaidSyntax = this.generateMermaidSyntax(models);
 
         // Save the mermaid syntax to a temporary file
-        const tempFile = path.resolve("./output/temp.mmd");
-        const outputDir = path.dirname(tempFile);
-        if (!fs.existsSync(outputDir)) {
-            fs.mkdirSync(outputDir, { recursive: true });
+        const tempFile = path.resolve(path.dirname(this.outputFile), "./output/temp.mmd");
+        const tempDir = path.dirname(tempFile);
+        if (!fs.existsSync(tempDir)) {
+            fs.mkdirSync(tempDir, { recursive: true });
         }
         fs.writeFileSync(tempFile, mermaidSyntax, "utf8");
 
         const outputFile = this.outputFile.replace(/\.md$/, `.${format}`);
-        const command = `${mmdcPath} -i ${tempFile} -o ${outputFile} -t neutral`;
+        const command = `${mmdcPath} -i ${tempFile} -o ${outputFile} -t default`;
 
         exec(command, (error, stdout, stderr) => {
             if (error) {
@@ -91,7 +91,8 @@ class DiagramGenerator {
 
             // Clean up temporary file
             try {
-                fs.unlinkSync(tempFile);
+                //fs.unlinkSync(tempFile);
+                fs.rmSync(tempDir, {recursive: true});
             } catch (unlinkError) {
                 console.error(`Failed to delete temporary file: ${unlinkError.message}`);
             }

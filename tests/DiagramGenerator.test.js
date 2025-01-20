@@ -57,7 +57,7 @@ describe("DiagramGenerator", () => {
         generator.generateDiagram(models, "svg");
 
         expect(fs.writeFileSync).toHaveBeenCalled();
-        expect(fs.unlinkSync).toHaveBeenCalled();
+        expect(fs.rmSync).toHaveBeenCalled();
     });
 
     it("should throw an error if models are empty", () => {

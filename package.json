@@ -1,6 +1,6 @@
 {
   "name": "erd-generator",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "A CLI tool to generate ER diagrams from ORM models or schemas",
   "main": "src/index.js",
   "bin": {
